@@ -17,8 +17,11 @@
 
         console.log(data);
         
-        document.getElementById('name').innerText = Navn;
-       
+        document.getElementById('name').innerHTML = Navn;
+        document.getElementById('role').innerHTML = Stilling;
+        document.getElementById('email').innerHTML = Email;
+        document.getElementById('phone').innerHTML = Telefonnummer;
+    
     }
 
     loadIntoTable("https://kinoxp-na.azurewebsites.net/api/v1/employees", document.querySelector("table"))
