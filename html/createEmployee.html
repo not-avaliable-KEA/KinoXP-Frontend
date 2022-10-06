@@ -14,6 +14,7 @@
 
     <div class="container">
 
+<<<<<<< HEAD
       <form class="row g-3 needs-validation" novalidate method="post" action="localhost:8080/api/v1/employees">
         <div class="col-12">
           <label for="name" class="form-label">Navn</label>
@@ -32,9 +33,32 @@
         </div>
         <div class="col-12">
           <label for="username" class="form-label">Username</label>
+=======
+      <form class="row g-3 needs-validation" novalidate method="post" action="https://kinoxp-na.azurewebsites.net/api/v1/employees">
+        <div class="col-md-5">
+          <label for="name" class="form-label">Navn</label>
+          <input type="text" class="form-control" id="name">
+          <div class="valid-feedback"> </div>
+        </div>
+
+         <div class="col-md-5">
+          <label for="email" class="form-label">Email</label>
+          <input type="text" class="form-control" id="email">
+          <div class="valid-feedback"></div>
+         </div>
+
+          <div class="col-md-5">
+            <label for="telephone" class="form-label">tlf nummer</label>
+            <input type="text" class="form-control" id="telephone">
+            <div class="valid-feedback"></div>
+          </div>
+
+        <div class="col-md-5">
+          <label for="username" class="form-label">Brugernavn</label>
+>>>>>>> ebdbbbc3a3f43393520996c7b8fa8b94a2adab47
           <div class="input-group has-validation">
-            <span class="input-group-text" id="inputGroupPrepend">@</span>
             <input type="text" class="form-control" id="validationCustomUsername">
+<<<<<<< HEAD
             <div class="invalid-feedback">
             </div>
           </div>
@@ -43,27 +67,30 @@
           <label for="code" class="form-label">kode</label>
           <input type="sequre" class="form-control" id="code" required>
           <div class="invalid-feedback">
+=======
+            <div class="invalid-feedback"></div>
+>>>>>>> ebdbbbc3a3f43393520996c7b8fa8b94a2adab47
           </div>
         </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-            <label class="form-check-label" for="invalidCheck">
-              Agree to terms and conditions
-            </label>
-            <div class="invalid-feedback">
-            </div>
-          </div>
+
+        <div class="col-md-5">
+          <label for="password" class="form-label">Kode</label>
+          <input type="password" class="form-control" id="password" required>
+          <div class="invalid-feedback"></div>
         </div>
+
+      <div class="col-md-5">
         <div class="form-floating">
           <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-            <option selected> vælg medarbejder rolle</option>
-            <option value="operatør">operatør</option>
-            <option value="billetkontrollør">billetkontrollør</option>
-            <option value="skrankepersonale">skrankepersonale</option>
+            <option selected> Vælg medarbejder role</option>
+            <option value="operatør">Operatør</option>
+            <option value="billetkontrollør">Billetkontrollør</option>
+            <option value="skrankepersonale">Skrankepersonale</option>
           </select>
-          <label for="floatingSelect">Works with selects</label>
+          <label for="floatingSelect">Role</label>
         </div>
+      </div>
+
         <div class="col-12">
           <button class="btn btn-primary" type="submit">Opret</button>
         </div>
