@@ -29,8 +29,36 @@ async function showMovie(){
     document.getElementById("button").innerHTML = 'Opdater';
 }
 
-async function sendData(){
-    let form = new FormData(document.getElementById("form"));
+function handleSubmit(event) {
+    event.preventDefault();
 
-    const data = Object.fromEntries(form.entries());
+    const data = new FormData(event.target);
+    const value = Object.fromEntries(data.entries());
+
+    if (id != null) {
+        fetch(url + "/" + id,{
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(value),
+        })
+            .then((response) => response.json())
+            .then(() => window.location.href = "/html/viewMovies.html")
+            .catch((error) => console.error('Error', error));
+
+    } else {
+        fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((response) => response.json())
+            .then(() => window.location.href = "/html/viewMovies.html")
+            .catch((error) => console.error('Error', error));
+        //redirect to view all
+    }
+    const form = document.querySelector('form');
+    form.addEventListener('submit', handleSubmit);
 }
