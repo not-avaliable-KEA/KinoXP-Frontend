@@ -2,8 +2,8 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 let id = urlParams.get('id')
 
-//const url = "https://kinoxp-na.azurewebsites.net/api/v1/employees";
-const url = "http://localhost:8080/api/v1/employees";
+const url = "https://kinoxp-na.azurewebsites.net/api/v1/employees";
+//const url = "http://localhost:8080/api/v1/employees";
 
 
 function checkIfUpdate() {
@@ -51,7 +51,7 @@ function handleSubmit(event) {
             body: JSON.stringify(value),
         })
         .then((response) => response.json())
-        .then((data) => console.log('success', data))
+        .then(() => window.location.href = "/html/viewEmployees.html")
         .catch((error) => console.error('Error', error));
         
     } else {
