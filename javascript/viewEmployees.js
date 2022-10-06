@@ -1,7 +1,7 @@
 
     const table_body = document.getElementById('table-body');
-    //const url = "https://kinoxp-na.azurewebsites.net/api/v1/employees";
-    const url = "http://localhost:8080/api/v1/employees";
+    const url = "https://kinoxp-na.azurewebsites.net/api/v1/employees";
+    //const url = "http://localhost:8080/api/v1/employees";
 
 
     async function fetchData() {
