@@ -33,7 +33,7 @@ async function deleteMovie(id){
     let data = await response.json();
 
     if (data == true){
-        alert("Movie with id: " + id + "has been deleted");
+        alert("Movie with id:" + id + " has been deleted");
         document.getElementById("id-" + id).remove();
     }
 }
