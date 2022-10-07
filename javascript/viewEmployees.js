@@ -1,17 +1,18 @@
 
-    const table_body = document.getElementById('table-body');
-    const url = "https://kinoxp-na.azurewebsites.net/api/v1/employees";
-    //const url = "http://localhost:8080/api/v1/employees";
+    let table_body
+    //const url = "https://kinoxp-na.azurewebsites.net/api/v1/employees";
+    const url = "http://localhost:8080/api/v1/employees";
 
 
-    async function fetchData() {
+    export async function initViewEmployees() {
+        document.getElementById('table-body').onclick = buttonClick;
         let response = await fetch(url);
         let data = await response.json();
         let list = Array.from(data);
 
         list.forEach((element) => makeNewEmployee(element));
     }
-    fetchData();
+    
 
     function makeNewEmployee(element) {
         let row = document.createElement("tr");
@@ -23,10 +24,31 @@
                         "<td>" + element.email + "</td>" +
                         "<td>" + element.telephone + "</td>" +
                         "<td>" + element.username + "</td>" + 
-                        "<td><a href=\"createEmployee.html?id=" + element.id + "\">link</a></td>" +
-                        "<td><span onclick=\"deleteEmployee(" + element.id + ")\">click to delete</span></td>";
+                        "<td><button id=\"" + element.id +  "-column-id\" type=\"button\"  class=\"edit btn btn-sm\">Redigér</button></td>" +
+                        "<td><button id=\"" + element.id +  "-column-id\" type=\"button\"  class=\"delete btn btn-sm btn-secondary\">Slet</button></td>";
         
-        table_body.appendChild(row);
+        document.getElementById('table-body').appendChild(row);
+    }
+
+    async function buttonClick(evt) {
+        const target = evt.target
+
+        // abort if not a button
+        if (!target.id.includes("-column-id")) return
+
+        // get id
+        const id = target.id.replace("-column-id", "")
+
+        // if delete
+        if (target.classList.contains("delete")) {
+            deleteEmployee(id)
+        } 
+
+        // if edit, change to edit page
+        if (target.classList.contains("edit")) {
+            window.router.navigate("rediger-medarbejder/" + id)
+        } 
+
     }
 
     async function deleteEmployee(id) {
