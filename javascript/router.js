@@ -6,6 +6,8 @@ import {
 } from "./utils.js"
 
 // imports for init method in the given script
+import { initCreateEmployee } from "/javascript/createEmployee.js"
+import { initViewEmployees } from "/javascript/viewEmployees.js"
 /*import { initNavigate } from "./pages/navigate/navigate.js"
 import { showMatchObject } from "./pages/show-match/match.js"
 import { initUsers } from "./pages/users/users.js"
@@ -39,29 +41,28 @@ window.addEventListener("load", async () => {
       }
     })
     .on({
-      //For very simple "templates", you can just insert your HTML directly like below
       "/": () => renderTemplate(templateHome, "content"),
-      
-      "/about": () => renderTemplate(templateAbout, "content"),
 
-      "/users": () => {
+      "/se-medarbejdere": () => {
         renderTemplate(templateViewEmployees, "content")
-        initUsers()
+        initViewEmployees()
       },
-      "/find-user": (match) => {
-        renderTemplate(templateFindUser, "content")
-        initFindUser(match)
+      "/opret-medarbejder": () => {
+        renderTemplate(templateCreateEmployee, "content")
+        initCreateEmployee()
       },
-
-      "/navigate-programatically": () => {
-        renderTemplate(templateNavigate, "content")
-        initNavigate()
+      "/rediger-medarbejder/:id": ({data}) => {
+        renderTemplate(templateCreateEmployee, "content")
+        initCreateEmployee(data)
       },
-
-      "/show-match": (match) => {
-        renderTemplate(templateMatch, "content")
-        showMatchObject(match)
-      }
+      "/se-film": () => {
+        renderTemplate(templateViewEmployees, "content")
+        //initUsers()
+      },
+      "/opret-film": () => {
+        renderTemplate(templateViewEmployees, "content")
+        //initUsers()
+      },
     })
     .notFound(() => {
       renderTemplate(templateNotFound, "content")
