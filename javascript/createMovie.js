@@ -59,6 +59,6 @@ function handleSubmit(event) {
             .catch((error) => console.error('Error', error));
         //redirect to view all
     }
-    const form = document.querySelector('form');
-    form.addEventListener('submit', handleSubmit);
 }
+const form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
