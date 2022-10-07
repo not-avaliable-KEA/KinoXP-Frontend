@@ -1,6 +1,6 @@
 const table_body = document.getElementById('table-body');
-//const url = "https://kinoxp-na.azurewebsites.net/api/v1/movietheaters";
-const url = "http://localhost:8080/api/v1/movietheaters";
+const url = "https://kinoxp-na.azurewebsites.net/api/v1/movietheaters";
+//const url = "http://localhost:8080/api/v1/movietheaters";
 
 
 async function fetchData() {

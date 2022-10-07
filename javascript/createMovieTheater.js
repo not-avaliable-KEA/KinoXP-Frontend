@@ -3,8 +3,8 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 let id = urlParams.get('id')
 
-//const url = "https://kinoxp-na.azurewebsites.net/api/v1/movietheaters";
-const url = "http://localhost:8080/api/v1/movietheaters";
+const url = "https://kinoxp-na.azurewebsites.net/api/v1/movietheaters";
+//const url = "http://localhost:8080/api/v1/movietheaters";
 
 
 function checkIfUpdate() {
