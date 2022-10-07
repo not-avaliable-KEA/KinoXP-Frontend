@@ -1,11 +1,12 @@
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const id = urlParams.get('id')
+let id = urlParams.get('id')
 
 //const url = "https://kinoxp-na.azurewebsites.net/api/v1/movies";
 const url = "http://localhost:8080/api/v1/movies";
 
-function chechIfUpdate(){
+function checkIfUpdate(){
+
     console.log(id);
     if (id != null && id > 0) {
         showMovie();
@@ -13,8 +14,7 @@ function chechIfUpdate(){
         id = null;
     }
 }
-
-chechIfUpdate();
+checkIfUpdate();
 
 async function showMovie(){
     const response = await fetch(url + "/" + id);
@@ -33,11 +33,12 @@ function handleSubmit(event) {
     event.preventDefault();
 
     const data = new FormData(event.target);
+
     const value = Object.fromEntries(data.entries());
 
     if (id != null) {
-        fetch(url + "/" + id,{
-            method: "PATCH",
+        fetch(url + "/" + id, {
+            method:"PATCH",
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -53,6 +54,7 @@ function handleSubmit(event) {
             headers: {
                 'Content-Type': 'application/json',
             },
+            body: JSON.stringify(value),
         })
             .then((response) => response.json())
             .then(() => window.location.href = "/html/viewMovies.html")
@@ -60,5 +62,6 @@ function handleSubmit(event) {
         //redirect to view all
     }
 }
+
 const form = document.querySelector('form');
 form.addEventListener('submit', handleSubmit);
