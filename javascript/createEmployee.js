@@ -1,21 +1,22 @@
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-let id = urlParams.get('id')
+let id
 
-const url = "https://kinoxp-na.azurewebsites.net/api/v1/employees";
-//const url = "http://localhost:8080/api/v1/employees";
+//const url = "https://kinoxp-na.azurewebsites.net/api/v1/employees";
+const url = "http://localhost:8080/api/v1/employees";
 
 
-function checkIfUpdate() {
+export function initCreateEmployee(data) {
+    id = data?.id
 
-    console.log(id);
+    console.log();
     if (id != null && id > 0) {
         showEmployee();
     } else {
         id = null;
     }
+  
+  const form = document.querySelector('form');
+  form.addEventListener('submit', handleSubmit);
 }
-checkIfUpdate();
 
 
 
@@ -51,7 +52,7 @@ function handleSubmit(event) {
             body: JSON.stringify(value),
         })
         .then((response) => response.json())
-        .then(() => window.location.href = "/html/viewEmployees.html")
+        .then(() => window.router.navigate("se-medarbejdere"))
         .catch((error) => console.error('Error', error));
         
     } else {
@@ -63,7 +64,7 @@ function handleSubmit(event) {
             body: JSON.stringify(value),
         })
         .then((response) => response.json())
-        .then(() => window.location.href = "/html/viewEmployees.html")
+        .then(() => window.router.navigate("se-medarbejdere"))
         .catch((error) => console.error('Error', error));
         // redirect to view all or somthing
     }
@@ -71,9 +72,6 @@ function handleSubmit(event) {
 
 
   }
-  
-  const form = document.querySelector('form');
-  form.addEventListener('submit', handleSubmit);
   
 
 
