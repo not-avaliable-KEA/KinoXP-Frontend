@@ -1,6 +1,6 @@
 const table_body = document.getElementById('table-body');
-//const url = "https://kinoxp-na.azurewebsites.net/api/v1/movies"
-const url = "http://localhost:8080/api/v1/movies";
+const url = "https://kinoxp-na.azurewebsites.net/api/v1/movies"
+//const url = "http://localhost:8080/api/v1/movies";
 
 async function fetchData(){
     let response = await fetch(url);
@@ -15,11 +15,12 @@ function makeNewMovie(element){
     let row = document.createElement("tr");
     row.id = "id-" + element.id;
 
-    row.innerHTML = "<td>" + element.id +  "</td>" +
+    row.innerHTML =
+        "<td>" + element.id +  "</td>" +
         "<td>" + element.name + "</td>" +
         "<td>" + element.genre + "</td>" +
-        "<td>" + element.description + "</td>" +
         "<td>" + element.length + "</td>" +
+        "<td>" + element.description + "</td>" +
         "<td>" + element.actors + "</td>" +
         "<td>" + element.director + "</td>" +
         "<td>" + element.ageLimit + "</td>" +
