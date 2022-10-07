@@ -15,7 +15,7 @@ import { initFindUser } from "./pages/findUser/findUser.js"
 window.addEventListener("load", async () => {
 
   // loading the pages
-  //const templateCreateEmployee = await loadHtml("/html/createEmployee.html")
+  const templateCreateEmployee = await loadHtml("/html/createEmployee.html")
   const templateViewEmployees = await loadHtml("/html/viewEmployees.html")
   //const templateCreateMovie = await loadHtml("/html/createMovie.html")
   //const templateViewMovies = await loadHtml("/html/viewMovies.html")
