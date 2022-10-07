@@ -18,6 +18,7 @@ function makeNewMovie(element){
     row.innerHTML = "<td>" + element.id +  "</td>" +
         "<td>" + element.name + "</td>" +
         "<td>" + element.genre + "</td>" +
+        "<td>" + element.description + "</td>" +
         "<td>" + element.length + "</td>" +
         "<td>" + element.actors + "</td>" +
         "<td>" + element.director + "</td>" +
