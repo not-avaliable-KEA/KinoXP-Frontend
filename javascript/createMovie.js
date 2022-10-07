@@ -45,7 +45,7 @@ function handleSubmit(event) {
             body: JSON.stringify(value),
         })
             .then((response) => response.json())
-            .then(() => window.location.href = "/html/viewMovies.html")
+            .then(() => window.location.href = "../html/viewMovies.html")
             .catch((error) => console.error('Error', error));
 
     } else {
