@@ -1,5 +1,3 @@
-
-    let table_body
     //const url = "https://kinoxp-na.azurewebsites.net/api/v1/employees";
     const url = "http://localhost:8080/api/v1/employees";
 
