@@ -10,8 +10,11 @@ import {
 import { initCreateEmployee } from "/pages/employee/create/createEmployee.js"
 import { initViewEmployees }  from "/pages/employee/view/viewEmployees.js"
 // Movie
-import { initCreateMovie } from "/pages/movie/create/createMovie.js"
+import { initCreateMovie }  from "/pages/movie/create/createMovie.js"
 import { initViewMovies }   from "/pages/movie/view/viewMovies.js"
+// Movie theater
+import { initCreateMovieTheater }  from "/pages/movieTheater/create/createMovieTheater.js"
+import { initViewMovieTheaters }   from "/pages/movieTheater/view/viewMovieTheaters.js"
 
 window.addEventListener("load", async () => {
 
@@ -23,7 +26,10 @@ window.addEventListener("load", async () => {
   const templateViewEmployees  = await loadHtml("/pages/employee/view/viewEmployees.html")
   // Movie
   const templateCreateMovie = await loadHtml("/pages/movie/create/createMovie.html")
-  const templateViewMovie   = await loadHtml("/pages/movie/view/viewMovies.html")
+  const templateViewMovies   = await loadHtml("/pages/movie/view/viewMovies.html")
+  // Movie theater
+  const templateCreateMovieTheater  = await loadHtml("/pages/movieTheater/create/createMovieTheater.html")
+  const templateViewMovieTheaters   = await loadHtml("/pages/movieTheater/view/viewMovieTheaters.html")
 
   adjustForMissingHash()
 
@@ -56,7 +62,7 @@ window.addEventListener("load", async () => {
         initCreateEmployee(data)
       },
       "/se-film": () => {
-        renderTemplate(templateViewMovie, "content")
+        renderTemplate(templateViewMovies, "content")
         initViewMovies()
       },
       "/opret-film": () => {
@@ -66,6 +72,18 @@ window.addEventListener("load", async () => {
       "/rediger-film/:id": ({data}) => {
         renderTemplate(templateCreateMovie, "content")
         initCreateMovie(data)
+      },
+      "/se-sale": () => {
+        renderTemplate(templateViewMovieTheaters, "content")
+        initViewMovieTheaters()
+      },
+      "/opret-sal": () => {
+        renderTemplate(templateCreateMovieTheater, "content")
+        initCreateMovieTheater()
+      },
+      "/rediger-sal/:id": ({data}) => {
+        renderTemplate(templateCreateMovieTheater, "content")
+        initCreateMovieTheater(data)
       },
     })
     .notFound(() => {

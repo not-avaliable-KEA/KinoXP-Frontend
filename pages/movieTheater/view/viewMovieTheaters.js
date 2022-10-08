@@ -1,32 +1,49 @@
-const table_body = document.getElementById('table-body');
-const url = "https://kinoxp-na.azurewebsites.net/api/v1/movietheaters";
-//const url = "http://localhost:8080/api/v1/movietheaters";
+//const url = "https://kinoxp-na.azurewebsites.net/api/v1/movietheaters";
+const url = "http://localhost:8080/api/v1/movietheaters";
 
 
-async function fetchData() {
+export async function initViewMovieTheaters() {
+    document.getElementById('table-body').onclick = buttonClick;
     let response = await fetch(url);
     let data = await response.json();
     let list = Array.from(data);
 
-    console.log(data);
-
     list.forEach((element) => makeNewTheatre(element));
 }
-fetchData();
 
 function makeNewTheatre(element) {
     let row = document.createElement("tr");
     row.id = "id-" + element.id;
 
-    row.innerHTML = "<td>" + element.id + "</td>" +
-                    "<td>" + element.name + "</td>" + 
-                    "<td>" + element.numberOfRows + "</td>" +
+    row.innerHTML = "<td>" + element.id            + "</td>" +
+                    "<td>" + element.name          + "</td>" + 
+                    "<td>" + element.numberOfRows  + "</td>" +
                     "<td>" + element.numberOfSeats + "</td>" +
-                    "<td><a href=\"createMovieTheater.html?id=" + element.id + "\">link</a></td>" +
-                     "<td><span onclick=\"deleteMovieTheater(" + element.id + ")\">click to delete</span></td>";
-                    
+                    "<td><button id=\"" + element.id +  "-column-id\" type=\"button\"  class=\"edit btn btn-sm btn-primary\">Redigér</button></td>" +
+                    "<td><button id=\"" + element.id +  "-column-id\" type=\"button\"  class=\"delete btn btn-sm btn-secondary\">Slet</button></td>";
+        
                 
-    table_body.appendChild(row)
+    document.getElementById('table-body').appendChild(row)
+}
+
+async function buttonClick(evt) {
+    const target = evt.target
+
+    // abort if not a button
+    if (!target.id.includes("-column-id")) return
+
+    // get id
+    const id = target.id.replace("-column-id", "")
+
+    // if delete
+    if (target.classList.contains("delete")) {
+        deleteMovieTheater(id)
+    } 
+
+    // if edit, change to edit page
+    if (target.classList.contains("edit")) {
+        window.router.navigate("rediger-sal/" + id)
+    } 
 }
 
 async function deleteMovieTheater(id) {
