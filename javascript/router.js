@@ -11,7 +11,7 @@ import { initCreateEmployee } from "/pages/employee/create/createEmployee.js"
 import { initViewEmployees }  from "/pages/employee/view/viewEmployees.js"
 // Movie
 import { initCreateMovie } from "/pages/movie/create/createMovie.js"
-//import { initViewMovie }   from "/pages/movie/view/viewMovies.js"
+import { initViewMovies }   from "/pages/movie/view/viewMovies.js"
 
 window.addEventListener("load", async () => {
 
@@ -23,7 +23,7 @@ window.addEventListener("load", async () => {
   const templateViewEmployees  = await loadHtml("/pages/employee/view/viewEmployees.html")
   // Movie
   const templateCreateMovie = await loadHtml("/pages/movie/create/createMovie.html")
-  //const templateViewMovie   = await loadHtml("/pages/movie/view/viewMovies.html")
+  const templateViewMovie   = await loadHtml("/pages/movie/view/viewMovies.html")
 
   adjustForMissingHash()
 
@@ -56,8 +56,8 @@ window.addEventListener("load", async () => {
         initCreateEmployee(data)
       },
       "/se-film": () => {
-        //renderTemplate(templateViewMovie, "content")
-        //initUsers()
+        renderTemplate(templateViewMovie, "content")
+        initViewMovies()
       },
       "/opret-film": () => {
         renderTemplate(templateCreateMovie, "content")
