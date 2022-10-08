@@ -63,6 +63,10 @@ window.addEventListener("load", async () => {
         renderTemplate(templateCreateMovie, "content")
         initCreateMovie()
       },
+      "/rediger-film/:id": ({data}) => {
+        renderTemplate(templateCreateMovie, "content")
+        initCreateMovie(data)
+      },
     })
     .notFound(() => {
       renderTemplate(templateNotFound, "content")
