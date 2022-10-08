@@ -2,7 +2,10 @@ import "https://unpkg.com/navigo"  //Will create the global Navigo object used b
 
 
 import {
-  setActiveLink, adjustForMissingHash, renderTemplate, loadHtml
+  setActiveLink, 
+  adjustForMissingHash, 
+  renderTemplate, 
+  loadHtml
 } from "/javascript/utils.js"
 
 // imports for init method in the given script
