@@ -1,5 +1,5 @@
-//const url = "https://kinoxp-na.azurewebsites.net/api/v1/movietheaters";
-const url = "http://localhost:8080/api/v1/movietheaters";
+import {config} from '/javascript/config.js';
+const url =  config.url + "/api/v1/movietheaters";
 
 
 export async function initViewMovieTheaters() {
