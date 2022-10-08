@@ -21,13 +21,13 @@ async function showMovie(){
     const response = await fetch(url + "/" + id);
     const movieData = await response.json();
 
-    document.getElementById("name").value = movieData.name;
-    document.getElementById("genre").value = movieData.genre;
-    document.getElementById("length").value = movieData.length;
-    document.getElementById("actors").value = movieData.actors;
-    document.getElementById("director").value = movieData.director;
-    document.getElementById("ageLimit").value = movieData.ageLimit;
-    document.getElementById("button").innerHTML = 'Opdater';
+    document.getElementById("name")     .value     = movieData.name;
+    document.getElementById("genre")    .value     = movieData.genre;
+    document.getElementById("length")   .value     = movieData.length;
+    document.getElementById("actors")   .value     = movieData.actors;
+    document.getElementById("director") .value     = movieData.director;
+    document.getElementById("ageLimit") .value     = movieData.ageLimit;
+    document.getElementById("button")   .innerHTML = 'Opdater';
 }
 
 function handleSubmit(event) {
@@ -38,29 +38,22 @@ function handleSubmit(event) {
     const value = Object.fromEntries(data.entries());
 
     if (id != null) {
-        fetch(url + "/" + id, {
-            method:"PATCH",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(value),
-        })
-            .then((response) => response.json())
-                        //redirect to view all
-            .then(() => window.router.navigate("se-film"))
-            .catch((error) => console.error('Error', error));
-
+        sendRequest("PATCH", url + "/" + id, value);
     } else {
-        fetch(url, {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(value),
-        })
-            .then((response) => response.json())
-                        //redirect to view all
-            .then(() => window.router.navigate("se-film"))
-            .catch((error) => console.error('Error', error));
+        sendRequest("POST", url, value);
     }
+}
+
+function sendRequest(method, url, value) {
+    fetch(url, {
+        method: method,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(value),
+    })
+        .then((response) => response.json())
+                    //redirect to view all
+        .then(() => window.router.navigate("se-film"))
+        .catch((error) => console.error('Error', error));
 }
