@@ -8,7 +8,7 @@ export async function initViewMovies(){
     let data = await response.json();
     let list = Array.from(data);
 
-
+    document.getElementById('table-body').innerHTML = ""; // to prevent showing of old entities
     list.forEach((element) => makeNewMovie(element));
 }
 
