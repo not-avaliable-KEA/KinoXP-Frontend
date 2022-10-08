@@ -1,20 +1,21 @@
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-let id = urlParams.get('id')
-
 const url = "https://kinoxp-na.azurewebsites.net/api/v1/movies";
 //const url = "http://localhost:8080/api/v1/movies";
 
-function checkIfUpdate(){
+let id;
 
-    console.log(id);
+export function initCreateMovie(data) {
+    id = data?.id
+
+    console.log();
     if (id != null && id > 0) {
-        showMovie();
+        showEmployee();
     } else {
         id = null;
     }
+  
+  const form = document.querySelector('form');
+  form.addEventListener('submit', handleSubmit);
 }
-checkIfUpdate();
 
 async function showMovie(){
     const response = await fetch(url + "/" + id);
@@ -45,7 +46,7 @@ function handleSubmit(event) {
             body: JSON.stringify(value),
         })
             .then((response) => response.json())
-            .then(() => window.location.href = "../html/viewMovies.html")
+            .then(() => window.router.navigate("se-film"))
             .catch((error) => console.error('Error', error));
 
     } else {
@@ -57,11 +58,8 @@ function handleSubmit(event) {
             body: JSON.stringify(value),
         })
             .then((response) => response.json())
-            .then(() => window.location.href = "../html/viewMovies.html")
+            .then(() => window.router.navigate("se-film"))
             .catch((error) => console.error('Error', error));
         //redirect to view all
     }
 }
-
-const form = document.querySelector('form');
-form.addEventListener('submit', handleSubmit);

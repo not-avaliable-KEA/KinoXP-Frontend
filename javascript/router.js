@@ -6,24 +6,24 @@ import {
 } from "/javascript/utils.js"
 
 // imports for init method in the given script
+// Employee
 import { initCreateEmployee } from "/pages/employee/create/createEmployee.js"
 import { initViewEmployees }  from "/pages/employee/view/viewEmployees.js"
-/*import { initNavigate } from "./pages/navigate/navigate.js"
-import { showMatchObject } from "./pages/show-match/match.js"
-import { initUsers } from "./pages/users/users.js"
-import { initFindUser } from "./pages/findUser/findUser.js"
-*/
+// Movie
+import { initCreateMovie } from "/pages/movie/create/createMovie.js"
+//import { initViewMovie }   from "/pages/movie/view/viewMovies.js"
 
 window.addEventListener("load", async () => {
 
   // loading the pages
-  const templateCreateEmployee = await loadHtml("/pages/employee/create/createEmployee.html")
-  const templateViewEmployees = await loadHtml("/pages/employee/view/viewEmployees.html")
-  //const templateCreateMovie = await loadHtml("/html/createMovie.html")
-  //const templateViewMovies = await loadHtml("/html/viewMovies.html")
-  //const templateCreateMovieTheater = await loadHtml("/html/createMovieTheater.html")
-  //const templateViewMovieTheaters = await loadHtml("/html/viewMovietheaters.html")
+  // Home
   const templateHome = await loadHtml("/html/EmployeeHome.html")
+  // Employee
+  const templateCreateEmployee = await loadHtml("/pages/employee/create/createEmployee.html")
+  const templateViewEmployees  = await loadHtml("/pages/employee/view/viewEmployees.html")
+  // Movie
+  const templateCreateMovie = await loadHtml("/pages/movie/create/createMovie.html")
+  //const templateViewMovie   = await loadHtml("/pages/movie/view/viewMovies.html")
 
   adjustForMissingHash()
 
@@ -56,12 +56,12 @@ window.addEventListener("load", async () => {
         initCreateEmployee(data)
       },
       "/se-film": () => {
-        renderTemplate(templateViewEmployees, "content")
+        //renderTemplate(templateViewMovie, "content")
         //initUsers()
       },
       "/opret-film": () => {
-        renderTemplate(templateViewEmployees, "content")
-        //initUsers()
+        renderTemplate(templateCreateMovie, "content")
+        initCreateMovie()
       },
     })
     .notFound(() => {
