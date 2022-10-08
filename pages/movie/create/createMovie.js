@@ -1,5 +1,5 @@
-const url = "https://kinoxp-na.azurewebsites.net/api/v1/movies";
-//const url = "http://localhost:8080/api/v1/movies";
+//const url = "https://kinoxp-na.azurewebsites.net/api/v1/movies";
+const url = "http://localhost:8080/api/v1/movies";
 
 let id;
 
@@ -8,7 +8,7 @@ export function initCreateMovie(data) {
 
     console.log();
     if (id != null && id > 0) {
-        showEmployee();
+        showMovie();
     } else {
         id = null;
     }
@@ -46,6 +46,7 @@ function handleSubmit(event) {
             body: JSON.stringify(value),
         })
             .then((response) => response.json())
+                        //redirect to view all
             .then(() => window.router.navigate("se-film"))
             .catch((error) => console.error('Error', error));
 
@@ -58,8 +59,8 @@ function handleSubmit(event) {
             body: JSON.stringify(value),
         })
             .then((response) => response.json())
+                        //redirect to view all
             .then(() => window.router.navigate("se-film"))
             .catch((error) => console.error('Error', error));
-        //redirect to view all
     }
 }
