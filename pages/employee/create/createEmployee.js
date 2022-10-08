@@ -36,42 +36,32 @@ async function showEmployee(){
 
 function handleSubmit(event) {
     event.preventDefault();
-  
+
     const data = new FormData(event.target);
-  
+
     const value = Object.fromEntries(data.entries());
-  
-    
 
     if (id != null) {
-        fetch(url + "/" + id, {
-            method:"PATCH",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(value),
-        })
-        .then((response) => response.json())
-        .then(() => window.router.navigate("se-medarbejdere"))
-        .catch((error) => console.error('Error', error));
-        
+        sendRequest("PATCH", url + "/" + id, value);
     } else {
-        fetch(url, {
-            method:"POST",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(value),
-        })
+        sendRequest("POST", url, value);
+    }
+}
+
+
+function sendRequest(method, url, value) {
+    fetch(url, {
+        method: method,
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(value),
+    })
         .then((response) => response.json())
+                    //redirect to view all
         .then(() => window.router.navigate("se-medarbejdere"))
         .catch((error) => console.error('Error', error));
-        // redirect to view all or somthing
-    }
-    
-
-
-  }
+}
   
 
 
