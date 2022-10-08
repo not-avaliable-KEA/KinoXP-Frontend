@@ -26,10 +26,10 @@ window.addEventListener("load", async () => {
   const templateViewEmployees  = await loadHtml("/pages/employee/view/viewEmployees.html")
   // Movie
   const templateCreateMovie = await loadHtml("/pages/movie/create/createMovie.html")
-  const templateViewMovies   = await loadHtml("/pages/movie/view/viewMovies.html")
+  const templateViewMovies  = await loadHtml("/pages/movie/view/viewMovies.html")
   // Movie theater
-  const templateCreateMovieTheater  = await loadHtml("/pages/movieTheater/create/createMovieTheater.html")
-  const templateViewMovieTheaters   = await loadHtml("/pages/movieTheater/view/viewMovieTheaters.html")
+  const templateCreateMovieTheater = await loadHtml("/pages/movieTheater/create/createMovieTheater.html")
+  const templateViewMovieTheaters  = await loadHtml("/pages/movieTheater/view/viewMovieTheaters.html")
 
   adjustForMissingHash()
 
