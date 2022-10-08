@@ -1,7 +1,7 @@
 let id
 
-//const url = "https://kinoxp-na.azurewebsites.net/api/v1/employees";
-const url = "http://localhost:8080/api/v1/employees";
+import {config} from '/javascript/config.js';
+const url =  config.url + "/api/v1/employees";
 
 
 export function initCreateEmployee(data) {
