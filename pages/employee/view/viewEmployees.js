@@ -24,7 +24,7 @@
                         "<td>" + element.email + "</td>" +
                         "<td>" + element.telephone + "</td>" +
                         "<td>" + element.username + "</td>" + 
-                        "<td><button id=\"" + element.id +  "-column-id\" type=\"button\"  class=\"edit btn btn-sm\">Redigér</button></td>" +
+                        "<td><button id=\"" + element.id +  "-column-id\" type=\"button\"  class=\"edit btn btn-sm btn-primary\">Redigér</button></td>" +
                         "<td><button id=\"" + element.id +  "-column-id\" type=\"button\"  class=\"delete btn btn-sm btn-secondary\">Slet</button></td>";
         
         document.getElementById('table-body').appendChild(row);

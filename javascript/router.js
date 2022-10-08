@@ -3,11 +3,11 @@ import "https://unpkg.com/navigo"  //Will create the global Navigo object used b
 
 import {
   setActiveLink, adjustForMissingHash, renderTemplate, loadHtml
-} from "./utils.js"
+} from "/javascript/utils.js"
 
 // imports for init method in the given script
-import { initCreateEmployee } from "/javascript/createEmployee.js"
-import { initViewEmployees } from "/javascript/viewEmployees.js"
+import { initCreateEmployee } from "/pages/employee/create/createEmployee.js"
+import { initViewEmployees }  from "/pages/employee/view/viewEmployees.js"
 /*import { initNavigate } from "./pages/navigate/navigate.js"
 import { showMatchObject } from "./pages/show-match/match.js"
 import { initUsers } from "./pages/users/users.js"
@@ -17,8 +17,8 @@ import { initFindUser } from "./pages/findUser/findUser.js"
 window.addEventListener("load", async () => {
 
   // loading the pages
-  const templateCreateEmployee = await loadHtml("/html/createEmployee.html")
-  const templateViewEmployees = await loadHtml("/html/viewEmployees.html")
+  const templateCreateEmployee = await loadHtml("/pages/employee/create/createEmployee.html")
+  const templateViewEmployees = await loadHtml("/pages/employee/view/viewEmployees.html")
   //const templateCreateMovie = await loadHtml("/html/createMovie.html")
   //const templateViewMovies = await loadHtml("/html/viewMovies.html")
   //const templateCreateMovieTheater = await loadHtml("/html/createMovieTheater.html")
