@@ -1,8 +1,8 @@
 getMoviesAndGenres();
 
 async function getMoviesAndGenres(){
-    //const moviesUrl= "http://localhost:8080/api/v1/movies";
-    const moviesUrl = "https://kinoxp-na.azurewebsites.net/api/v1/movies";
+    const moviesUrl= "http://localhost:8080/api/v1/movies";
+    //const moviesUrl = "https://kinoxp-na.azurewebsites.net/api/v1/movies";
     const movieResponse = await fetch(moviesUrl);
     const movieData = await movieResponse.json();
 
@@ -33,6 +33,8 @@ async function getMoviesAndGenres(){
       carouselContainer.className = "carousel-container container-fluid"
       carouselContainer.id = `carousel-container-${GenreValues[i]}`
 
+      carouselContainer.innerHTML = `<h2 class="carousel-heading">${GenreValues[i]}</h2>`
+
       let row = document.createElement("div")
       document.getElementById(`carousel-container-${GenreValues[i]}`).appendChild(row)
       row.className = "row"
@@ -45,13 +47,13 @@ async function getMoviesAndGenres(){
 
             document.getElementById(`row-${GenreValues[i]}`).appendChild(elem)
 
-            elem.style.border = "2px solid red" 
             elem.className = 'col-6 col-md-4 col-xl-2'
             
             elem.innerHTML = `<div class="card"> 
                                 <img src="https://via.placeholder.com/150" class="card-img-top" />  
                                 <div class="card-body">  
-                                    <h5 class="card-title"> ` + movieListe[ii].name + `</h5> 
+                                    <h5 class="card-title"> ` + movieListe[ii].name + `</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">${movieListe[ii].length} min.</h6> 
                                     </div>
                                 </div>`
         }
