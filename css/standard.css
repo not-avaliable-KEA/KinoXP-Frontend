@@ -32,7 +32,6 @@ body {
 
 .container{
     background-color: var(--black);
-    min-height: 100vh;
 }
 
 .carousel-container{
@@ -56,5 +55,22 @@ body {
 }
 
 .value {
-    color: var(--lightorange);
+    color: var(--black);
+}
+
+.info-block {
+    background-color: var(--lightgrey); 
+    padding: 0.5px 0px 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.reserveButton {
+    background-color: var(--darkorange);
+    border-color: var(--black);
+}
+
+.reserveButton:hover {
+    background-color: var(--lightorange);
+    border-color: var(--lightorange);
 }
