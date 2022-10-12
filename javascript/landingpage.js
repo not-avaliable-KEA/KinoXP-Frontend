@@ -49,7 +49,7 @@ async function getMoviesAndGenres(){
 
             elem.className = 'col-6 col-md-4 col-xl-2'
             
-            elem.innerHTML = `<a href="/pages/movieInfo/view/viewMovieInfo.html?${movieListe[ii].id}">
+            elem.innerHTML = `<a href="/pages/movieInfo/view/viewMovieInfo.html?id=${movieListe[ii].id}">
                                 <div class="card"> 
                                 <img src="https://via.placeholder.com/150" class="card-img-top" />  
                                 <div class="card-body">  
