@@ -1,7 +1,14 @@
 :root {
-    --orange: orangered;
-    --black: black;
-    --darkgrey: rgb(59, 57, 57);
+    --darkorange: #d7582b;
+    --lightorange: #fc9d2c;
+    --black: #1a1a1a;
+    --darkgrey: #545154;
+    --lightgrey: #b5b5b5;
+  }
+
+body { 
+    background-color: black;
+    min-height: 100vh; 
   }
 
 
@@ -22,21 +29,22 @@
 }
 
 .container-fluid{
-    background-color: var(--orange);
+    background-color: var(--darkorange);
 }
 
 .container{
     background-color: var(--black);
+    min-height: 100vh;
 }
 
 .carousel-container{
     width: 100%;
-    height: 600px; 
+    min-height: 1000px; 
     background-color: var(--darkgrey);
 }
 
 .carousel-heading {
-    color: var(--orange);
+    color: var(--lightorange);
 }
 
 
