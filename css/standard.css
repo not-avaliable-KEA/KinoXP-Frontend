@@ -24,8 +24,6 @@ body {
     width: 100%;
     height: 30px;
     border: 2px solid;
-    
-
 }
 
 .container-fluid{
@@ -53,4 +51,10 @@ body {
     height: 300px;
 }
 
+.identifier {
+    color: var(--darkorange);
+}
 
+.value {
+    color: var(--lightorange);
+}
