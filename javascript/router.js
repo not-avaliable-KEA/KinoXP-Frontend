@@ -18,6 +18,8 @@ import { initViewMovies }   from "/pages/movie/view/viewMovies.js"
 // Movie theater
 import { initCreateMovieTheater }  from "/pages/movieTheater/create/createMovieTheater.js"
 import { initViewMovieTheaters }   from "/pages/movieTheater/view/viewMovieTheaters.js"
+// Movie Listing
+import { initCreateMovieListing }  from "/pages/movieListing/Create/createMovieListing.js"
 
 window.addEventListener("load", async () => {
 
@@ -33,6 +35,8 @@ window.addEventListener("load", async () => {
   // Movie theater
   const templateCreateMovieTheater = await loadHtml("/pages/movieTheater/create/createMovieTheater.html")
   const templateViewMovieTheaters  = await loadHtml("/pages/movieTheater/view/viewMovieTheaters.html")
+  // Movie Listing
+  const templateCreateMovieListing = await loadHtml("/pages/movieListing/create/createMovieListing.html")
 
   adjustForMissingHash()
 
@@ -87,6 +91,14 @@ window.addEventListener("load", async () => {
       "/rediger-sal/:id": ({data}) => {
         renderTemplate(templateCreateMovieTheater, "content")
         initCreateMovieTheater(data)
+      },
+      "/opret-forestilling": () => {
+        renderTemplate(templateCreateMovieListing, "content")
+        initCreateMovieListing()
+      },
+      "/rediger-forestilling/:id": ({data}) => {
+        renderTemplate(templateCreateMovieListing, "content")
+        initCreateMovieListing(data)
       },
     })
     .notFound(() => {
