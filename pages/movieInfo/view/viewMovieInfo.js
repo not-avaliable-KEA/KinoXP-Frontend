@@ -23,6 +23,8 @@ function makeNewMovieInfo(element){
 
 }
 
+makeNewMovieInfo();
+
 
 
 
