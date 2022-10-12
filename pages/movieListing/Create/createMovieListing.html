@@ -1,0 +1,35 @@
+<div class="template">
+  
+    <form id="form" class="row g-3 needs-validation" novalidate method="post" action="https://kinoxp-na.azurewebsites.net/api/v1/employees">
+      
+  
+    <div class="col-md-5">
+      <div class="form-floating">
+        <select class="form-select" id="movieId" name="movieId" aria-label="Floating label select example">
+          <option selected> Vælg film</option>
+        </select>
+        <label for="movieId">Film</label>
+      </div>
+    </div>
+
+    <div class="col-md-5">
+        <div class="form-floating">
+            <select class="form-select" id="movieTheaterId" name="movieTheaterId" aria-label="Floating label select example">
+                <option selected> Vælg Sal</option>
+            </select>
+            <label for="movieTheaterId">Sal</label>
+        </div>
+    </div>
+
+    <div class="col-md-5">
+        <input id="time" type="datetime-local" name="time" value="" />
+        <label for="time">Dato og tid for forstilling</label>
+    </div>
+  
+    <div class="col-12">
+    <button id="button" class="btn btn-primary" type="submit">Opret</button>
+    </div>
+
+    </form>
+  
+  </div>
