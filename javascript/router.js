@@ -1,4 +1,4 @@
-import "https://unpkg.com/navigo"  //Will create the global Navigo object used below
+import "https://unpkg.com/navigo"  //Will create the global Navigo object used below, framework/værktøj (skifter indhold på siderne, afhængigt af hvilket urL)
 
 
 import {
@@ -20,6 +20,7 @@ import { initCreateMovieTheater }  from "/pages/movieTheater/create/createMovieT
 import { initViewMovieTheaters }   from "/pages/movieTheater/view/viewMovieTheaters.js"
 // Movie Listing
 import { initCreateMovieListing }  from "/pages/movieListing/Create/createMovieListing.js"
+import { initViewMovieListing } from "/pages/movieListing/view/viewMovieListing.js"
 
 window.addEventListener("load", async () => {
 
@@ -37,6 +38,7 @@ window.addEventListener("load", async () => {
   const templateViewMovieTheaters  = await loadHtml("/pages/movieTheater/view/viewMovieTheaters.html")
   // Movie Listing
   const templateCreateMovieListing = await loadHtml("/pages/movieListing/create/createMovieListing.html")
+  const templateViewMovieListing = await loadHtml("/pages/movieListing/view/viewMovieListing.html")
 
   adjustForMissingHash()
 
@@ -91,6 +93,10 @@ window.addEventListener("load", async () => {
       "/rediger-sal/:id": ({data}) => {
         renderTemplate(templateCreateMovieTheater, "content")
         initCreateMovieTheater(data)
+      },
+      "/se-forestillinger": () => {
+        renderTemplate(templateViewMovieListing, "content")
+        initViewMovieListing(data)
       },
       "/opret-forestilling": () => {
         renderTemplate(templateCreateMovieListing, "content")
