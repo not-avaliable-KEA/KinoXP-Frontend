@@ -1,11 +1,13 @@
-const url = "http://localhost:8080/api/v1/movies/1/full";
+const url = "http://localhost:8080/api/v1/movies/";
 
 
 
 async function initMovieInfo() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id')
   
 
-    const response = await fetch(url);
+    const response = await fetch(url + id +  "/full");
     const movieInfo = await response.json();
 
     console.log(movieInfo);
@@ -13,7 +15,6 @@ async function initMovieInfo() {
     document.getElementById("name1").innerHTML = movieInfo.name;
     document.getElementById("genre").innerHTML = movieInfo.genre;
     document.getElementById("length").innerHTML = movieInfo.length
-    document.getElementById("name").innerHTML = movieInfo.name
     document.getElementById("description").innerHTML = movieInfo.description;
     document.getElementById("actors").innerHTML = movieInfo.actors;
     document.getElementById("directors").innerHTML = movieInfo.director
