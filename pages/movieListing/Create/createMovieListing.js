@@ -1,6 +1,7 @@
 let id
 
 import {config} from '/javascript/config.js';
+const url =  config.url + "/api/v1/movieListings";
 const movieUrl =  config.url + "/api/v1/movies";
 const movieTheaterUrl =  config.url + "/api/v1/movietheaters";
 
@@ -58,15 +59,16 @@ function handleSubmit(event) {
 
     const data = new FormData(event.target);
 
+    data.set("date", (data.get("date").replace("T", " ")));
+
     const value = Object.fromEntries(data.entries());
 
     console.log(JSON.stringify(value));
-    /*if (id != null) {
+    if (id != null) {
         sendRequest("PATCH", url + "/" + id, value);
     } else {
         sendRequest("POST", url, value);
     }
-    */
 }
 
 
@@ -80,7 +82,7 @@ function sendRequest(method, url, value) {
     })
         .then((response) => response.json())
                     //redirect to view all
-        .then(() => window.router.navigate("se-medarbejdere"))
+        .then(() => window.router.navigate("se-forestilinger"))
         .catch((error) => console.error('Error', error));
 }
   
