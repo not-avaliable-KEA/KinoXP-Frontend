@@ -7,7 +7,6 @@ const url =  config.url + "/api/v1/employees";
 export function initCreateEmployee(data) {
     id = data?.id
 
-    console.log();
     if (id != null && id > 0) {
         showEmployee();
     } else {
