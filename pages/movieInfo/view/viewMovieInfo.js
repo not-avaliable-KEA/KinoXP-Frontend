@@ -2,28 +2,25 @@ const url = "http://localhost:8080/api/v1/movies/1/full";
 
 
 
-async function initMovieInfo(){
-const response = await fetch(url);
-const movieInfo = await response.json();
+async function initMovieInfo() {
+  
 
-console.log(movieInfo);
+    const response = await fetch(url);
+    const movieInfo = await response.json();
+
+    console.log(movieInfo);
+
+    document.getElementById("name1").innerHTML = movieInfo.name;
+    document.getElementById("genre").innerHTML = movieInfo.genre;
+    document.getElementById("length").innerHTML = movieInfo.length
+    document.getElementById("name").innerHTML = movieInfo.name
+    document.getElementById("description").innerHTML = movieInfo.description;
+    document.getElementById("actors").innerHTML = movieInfo.actors;
+    document.getElementById("directors").innerHTML = movieInfo.director
+    document.getElementById("ageLimit").innerHTML = movieInfo.ageLimit
 }
 
 initMovieInfo();
-
-function makeNewMovieInfo(element){
-        document.getElementById("name1").innerHTML = movieInfo.name;
-        document.getElementById("genre").innerHTML = movieInfo.genre;
-        document.getElementById("length").innerHTML = movieInfo.length
-        document.getElementById("name").innerHTML = movieInfo.name
-        document.getElementById("description").innerHTML = movieInfo.description;
-        document.getElementById("actors").innerHTML = movieInfo.actors;
-        document.getElementById("directors").innerHTML = movieInfo.directors
-        document.getElementById("ageLimit").innerHTML = movieInfo.ageLimit
-
-}
-
-makeNewMovieInfo();
 
 
 
