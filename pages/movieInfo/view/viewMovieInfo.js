@@ -3,15 +3,15 @@ const url = "http://localhost:8080/api/v1/movies/";
 
 
 async function initMovieInfo() {
+    // get which movie to show
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id')
   
-
+    // get the full movie data
     const response = await fetch(url + id +  "/full");
     const movieInfo = await response.json();
 
-    console.log(movieInfo);
-
+    // overwrite standard data
     document.getElementById("name1").innerHTML = movieInfo.name;
     document.getElementById("genre").innerHTML = movieInfo.genre;
     document.getElementById("length").innerHTML = movieInfo.length
@@ -19,6 +19,26 @@ async function initMovieInfo() {
     document.getElementById("actors").innerHTML = movieInfo.actors;
     document.getElementById("directors").innerHTML = movieInfo.director
     document.getElementById("ageLimit").innerHTML = movieInfo.ageLimit
+
+    // get the movieListings and sort them by date oldest to newest
+    const movieListings = Array.from(movieInfo.movieListings)
+                          .sort((l1, l2) => l1.date.localeCompare(l2.date));
+
+    const tablebody = document.getElementById("tablebody");
+    
+    // add the listings to the table
+    movieListings.forEach((listing) => {
+        let row = document.createElement("tr");
+
+        row.innerHTML = `
+        <tr>
+            <td>${listing.movieTheater.name}</td>
+            <td>${listing.date}</td>
+            <td><a href="to be added ! ?id=${listing.id}"><button class="btn btn-primary reserveButton">Bestil</button></a></td>
+        </tr>`;
+
+        tablebody.appendChild(row);
+    });
 }
 
 initMovieInfo();

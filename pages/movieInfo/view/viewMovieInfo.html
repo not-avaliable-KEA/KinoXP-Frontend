@@ -39,7 +39,7 @@
 
     <div class="row align-items-center justify-content-center">
       <div class="col-sm-4 pt-5" >
-        <div class="card " style="width:18rem;">
+        <div class="card info-block" style="width:18rem;">
           <div class="card-body">
             <h4 class="card-title"><span id="name1"></span></h4>
 
@@ -54,11 +54,20 @@
           </div>
         </div>
       </div>
+
       <div class="col-lg-6">
-        <p><h3 class="identifier">Beskrivelse:</h3> <span id="description" class="value"></span></p>
-        <p><h3 class="identifier">Skuespillere:</h3> <span id="actors" class="value"></span></p>
-        <p><h3 class="identifier">Instruktør:</h3> <span id="directors" class="value"></span></p>
-        <p><h3 class="identifier">Aldersgrænse:</h3> <span id="ageLimit" class="value"></span></p>
+        <div class="info-block">
+          <p><h4 class="identifier">Beskrivelse:</h4> <span id="description" class="value"></span></p>
+        </div>
+        <div class="info-block">
+          <p><h4 class="identifier">Skuespillere:</h4> <span id="actors" class="value"></span></p>
+        </div>
+        <div class="info-block">
+          <p><h4 class="identifier">Instruktør:</h4> <span id="directors" class="value"></span></p>
+        </div>
+        <div class="info-block">
+          <p><h4 class="identifier">Aldersgrænse:</h4> <span id="ageLimit" class="value"></span></p>
+        </div>
 
       </div>
 
@@ -66,14 +75,14 @@
   
 
 
-  <div class="container mt-3" style="color: orange">
-    <h2>Vælg biograf og tidspunkt</h2>
+  <div class="container mt-3 info-block">
+    <h2 class="identifier">Forestillinger: </h2>
 
-    <table class="table table-bordered" style="color: orange">
+    <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Biograf</th>
-          <th>Dato</th>
+          <th class="identifier">Biograf</th>
+          <th class="identifier">Dato</th>
         </tr>
       </thead>
       <tbody id="tablebody">
