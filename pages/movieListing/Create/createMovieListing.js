@@ -1,4 +1,5 @@
 let id
+let listing
 
 import {config} from '/javascript/config.js';
 const url =  config.url + "/api/v1/movieListings";
@@ -6,18 +7,21 @@ const movieUrl =  config.url + "/api/v1/movies";
 const movieTheaterUrl =  config.url + "/api/v1/movietheaters";
 
 
-export function initCreateMovieListing(data) {
+export async function initCreateMovieListing(data) {
     id = data?.id
-
-    getMovies();
-    getMovieTheaters();
 
     console.log();
     if (id != null && id > 0) {
-
+        await getMovieListing()
+        document.getElementById("date").value = listing.date.replace(" ", "T")
+        document.getElementById("movieId").innerHTML = "";
+        document.getElementById("movieTheaterId").innerHTML = "";
     } else {
         id = null;
     }
+
+    getMovies();
+    getMovieTheaters();
   
   const form = document.querySelector('form');
   form.addEventListener('submit', handleSubmit);
@@ -34,25 +38,39 @@ async function getMovies(){
 
     // put each of the movies into the array
     moviesArray.forEach((movie) => {
-        movieSelector.innerHTML += `<option value="${movie.id}">${movie.name}</option>`
+        if (listing?.movieId == movie.id) {
+            movieSelector.innerHTML += `<option value="${movie.id}" selected>${movie.name}</option>`
+        }else {
+            movieSelector.innerHTML += `<option value="${movie.id}">${movie.name}</option>`
+        }
     });
 }
 
 async function getMovieTheaters(){
-    // get movies
+    // get movie theaters
     const response = await fetch(movieTheaterUrl);
     const movies = await response.json();
     const moviesArray = Array.from(movies);
 
     // get the selector 
-    const movieSelector = document.getElementById("movieTheaterId");
+    const movieTheaterSelector = document.getElementById("movieTheaterId");
 
-    // put each of the movies into the array
-    moviesArray.forEach((movie) => {
-        movieSelector.innerHTML += `<option value="${movie.id}">${movie.name}</option>`
+    // put each of the movie theaters into the array
+    moviesArray.forEach((movieTheater) => {
+        if (listing?.movieTheaterId == movieTheater.id) {
+            movieTheaterSelector.innerHTML += `<option value="${movieTheater.id}" selected>${movieTheater.name}</option>`
+        } else {
+            movieTheaterSelector.innerHTML += `<option value="${movieTheater.id}">${movieTheater.name}</option>`
+        }
     });
 }
 
+
+async function getMovieListing(){
+    // get movies
+    const response = await fetch(url + "/" + id);
+    listing = await response.json();
+}
 
 function handleSubmit(event) {
     event.preventDefault();
@@ -63,7 +81,6 @@ function handleSubmit(event) {
 
     const value = Object.fromEntries(data.entries());
 
-    console.log(JSON.stringify(value));
     if (id != null) {
         sendRequest("PATCH", url + "/" + id, value);
     } else {
