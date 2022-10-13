@@ -26,8 +26,15 @@ async function initMovieInfo() {
 
     const tablebody = document.getElementById("tablebody");
     
+    const d = Date.now()
     // add the listings to the table
-    movieListings.forEach((listing) => {
+    movieListings
+    .filter((listing) => {
+        let str = listing.date.replace(" ", "T");
+        return Date.parse(str) > d;
+        
+    })
+    .forEach((listing) => {
         let row = document.createElement("tr");
 
         row.innerHTML = `
