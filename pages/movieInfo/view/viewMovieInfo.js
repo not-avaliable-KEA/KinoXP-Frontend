@@ -20,6 +20,9 @@ async function initMovieInfo() {
     document.getElementById("directors").innerHTML = movieInfo.director
     document.getElementById("ageLimit").innerHTML = movieInfo.ageLimit
 
+    // setting the page title
+    document.title = movieInfo.name;
+
     // get the movieListings and sort them by date oldest to newest
     const movieListings = Array.from(movieInfo.movieListings)
                           .sort((l1, l2) => l1.date.localeCompare(l2.date));
