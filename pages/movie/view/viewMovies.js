@@ -32,7 +32,6 @@ function makeNewMovie(element){
 }
 
 function buttonClick(evt) {
-    console.log(yes)
     const target = evt.target
 
     // abort if not a button

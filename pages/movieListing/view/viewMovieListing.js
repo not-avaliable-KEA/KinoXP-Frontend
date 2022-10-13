@@ -1,10 +1,7 @@
 import {config} from '/javascript/config.js';
 const url =  config.url + "/api/v1/movieListings/test";
 const url1 =  config.url + "/api/v1/movies";
-
-
-//initViewMovieListing()
-
+const url2 = config.url + "/api/v1/movieListings";
 
 export async function  initViewMovieListing(){
 
@@ -19,13 +16,10 @@ export async function  initViewMovieListing(){
 
     console.log(movieListings);
 
-    document.getElementById('thead').innerHTML = "hej";
-    document.getElementById('tbody').innerHTML = "hej";
-
     let table1 = document.getElementById("thead");
     let table2 = document.getElementById("tbody");
 
-        table1.innerHTML += `<tr>
+        table1.innerHTML = `<tr>
 
                 <th>Forestillings id</th>
                 <th>Film Navn</th>
@@ -70,7 +64,7 @@ export async function  initViewMovieListing(){
         }
 
         async function deleteMovieListing(id){
-            let response = await fetch(url + "/", {method: 'DELETE'})
+            let response = await fetch(url2 + "/" + id, {method: 'DELETE'})
             let data = await response.json();
         
             if (data == true){
