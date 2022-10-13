@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/css/standard.css">
+  <title>Title</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><b>KinoXp</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul id="menu" class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/se-medarbejdere">Se alle film</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/se-medarbejdere">Om Biografen</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="row align-items-center justify-content-center">
+      <div class="col-sm-4 pt-5" >
+        <div class="card info-block" style="width:18rem;">
+          <div class="card-body">
+            <h4 class="card-title"><span id="name1"></span></h4>
+
+            <div class="container.fluid">
+              <div class="row pl-3">
+                <div><span id="genre"></span>
+                  <p><span id="length"></span> min.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="info-block">
+          <p><h4 class="identifier">Beskrivelse:</h4> <span id="description" class="value"></span></p>
+        </div>
+        <div class="info-block">
+          <p><h4 class="identifier">Skuespillere:</h4> <span id="actors" class="value"></span></p>
+        </div>
+        <div class="info-block">
+          <p><h4 class="identifier">Instruktør:</h4> <span id="directors" class="value"></span></p>
+        </div>
+        <div class="info-block">
+          <p><h4 class="identifier">Aldersgrænse:</h4> <span id="ageLimit" class="value"></span></p>
+        </div>
+
+      </div>
+
+    </div>
+  
+
+
+  <div class="container mt-3 info-block">
+    <h2 class="identifier">Forestillinger: </h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="identifier">Biograf</th>
+          <th class="identifier">Dato</th>
+        </tr>
+      </thead>
+      <tbody id="tablebody">
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Hjem</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Se alle film</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Om os</a></li>
+      </ul>
+      <p class="text-center text-muted">&copy; KinoXp, <br> Anno 2022</p>
+    </footer>
+  </div>
+
+
+</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+  <script src="/pages/movieInfo/view/viewMovieInfo.js"></script>
+</body>
+
+</html>

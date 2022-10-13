@@ -6,38 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="/javascript/login.js"></script>
-    <script src="/javascript/router.js" type="module"></script>
+    <script defer src="../javascript/login.js"></script>
     <title>Login</title>
 </head>
 <body>
+    <div style="margin-top: 300px; margin-left: 550px"/>
+    <div class="container"/>
 
-    <div style="margin-top: 300px; margin-left: 550px">
-    <div class="container">
-        <form id="form_id" method="post" name="myform"><!-- Username input input -->
-
+    <form id="form_id" method="post" name="myform">
+    <!-- Username input -->
     <div class="col-md-auto" style="width: 35%">
         <label>Username</label>
         <input type="text" name="username" id="username"/>
     </div>
-
     <!-- Password input -->
     <div class="col-md-auto" style="align-self: center; width: 35%; margin-bottom: 5px">
         <label>Password</label>
         <input type="password" name="password" id="password"/>
-        <input type="button" value="Login" id="submit" onclick="validate()"/>
     </div>
-        </form>
-
     <!-- Submit button -->
-
-
+    <div>
+        <input type="button" value="Login" id="submit" onclick="validateLogin()"/>
     </div>
-    </div>
-
-
-
-
-
+    </form>
 </body>
 </html>
