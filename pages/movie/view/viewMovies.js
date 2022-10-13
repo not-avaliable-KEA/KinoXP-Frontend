@@ -32,6 +32,7 @@ function makeNewMovie(element){
 }
 
 function buttonClick(evt) {
+    console.log(yes)
     const target = evt.target
 
     // abort if not a button
@@ -42,7 +43,7 @@ function buttonClick(evt) {
 
     // if delete
     if (target.classList.contains("delete")) {
-        deleteMovie(id)
+        deleteMovieListing(id)
     } 
 
     // if edit, change to edit page
@@ -51,12 +52,12 @@ function buttonClick(evt) {
     } 
 }
 
-async function deleteMovie(id){
+async function deleteMovieListing(id){
     let response = await fetch(url + "/" + id, {method: 'DELETE'})
     let data = await response.json();
 
     if (data == true){
-        alert("Movie with id:" + id + " has been deleted");
+        alert("MovieListing with id:" + id + " has been deleted");
         document.getElementById("id-" + id).remove();
     }
 }
