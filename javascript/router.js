@@ -20,7 +20,7 @@ import { initCreateMovieTheater }  from "/pages/movieTheater/create/createMovieT
 import { initViewMovieTheaters }   from "/pages/movieTheater/view/viewMovieTheaters.js"
 // Movie Listing
 import { initCreateMovieListing }  from "/pages/movieListing/Create/createMovieListing.js"
-//import { initViewMovieListing }    from "/pages/movieListing/view/viewMovieListing.js"
+import { initViewMovieListing }    from "/pages/movieListing/view/viewMovieListing.js"
 
 window.addEventListener("load", async () => {
 
@@ -96,7 +96,7 @@ window.addEventListener("load", async () => {
       },
       "/se-forestillinger": () => {
         renderTemplate(templateViewMovieListing, "content")
-        initViewMovieListing(data)
+        initViewMovieListing()
       },
       "/opret-forestilling": () => {
         renderTemplate(templateCreateMovieListing, "content")
