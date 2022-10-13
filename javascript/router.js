@@ -96,7 +96,7 @@ window.addEventListener("load", async () => {
       },
       "/se-forestillinger": () => {
         renderTemplate(templateViewMovieListing, "content")
-        initViewMovieListing()
+        initViewMovieListing(data)
       },
       "/opret-forestilling": () => {
         renderTemplate(templateCreateMovieListing, "content")
