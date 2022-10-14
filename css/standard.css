@@ -74,3 +74,8 @@ body {
     background-color: var(--lightorange);
     border-color: var(--lightorange);
 }
+
+.bookingtekst{
+    background-color:  #d7582b;
+    font-weight: bolder;
+}
