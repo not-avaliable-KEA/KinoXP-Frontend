@@ -22,7 +22,7 @@ import { initViewMovieTheaters }   from "/pages/movieTheater/view/viewMovieTheat
 import { initCreateMovieListing }  from "/pages/movieListing/Create/createMovieListing.js"
 import { initViewMovieListing }    from "/pages/movieListing/view/viewMovieListing.js"
 //Reservation
-import { in}
+import { initCreateReservation}    from "/pages/reservations/create/createReservations.js"
 import { initViewReservation }     from "/pages/reservations/view/viewReservations.js"
 
 
@@ -114,11 +114,11 @@ window.addEventListener("load", async () => {
         initCreateMovieListing(data)
       },
       "/view-reservations": () => {
-        renderTemplate(templateViewMovieListing, "content")
+        renderTemplate(templateViewReservation, "content")
         initViewMovieListing()
       },
       "/create-reservations": () => {
-          renderTemplate(templateViewMovieListing, "content")
+          renderTemplate(templateCreateReservation, "content")
           initViewMovieListing()
       }
     })
