@@ -19,7 +19,7 @@ function makeNewReservation(element) {
 
     row.innerHTML = "<td>" + element.id            + "</td>" +
                     "<td>" + element.name          + "</td>" + 
-                    "<td>" + element.numberOfSeats + "</td>" +
+                    "<td>" + element.amountOfSeats + "</td>" +
                     "<td>" + element.meetsAgeRequirement + "</td>" +
                     "<td>" + element.movieListingId + "</td>" +
                     "<td><button id=\"" + element.id +  "-column-id\" type=\"button\"  class=\"edit btn btn-sm btn-primary\">Redigér</button></td>" +
