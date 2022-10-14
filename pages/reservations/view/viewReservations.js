@@ -10,7 +10,7 @@ export async function initViewReservation(){
     const reservationInfo = await response.json();
 
     document.getElementById('table-body').innerHTML = ""; // to prevent showing of old entities
-    list.forEach((element) => makeNewReservation(element));
+    reservationInfo.forEach((element) => makeNewReservation(element));
 }
 
 function makeNewReservation(element) {
@@ -19,9 +19,9 @@ function makeNewReservation(element) {
 
     row.innerHTML = "<td>" + element.id            + "</td>" +
                     "<td>" + element.name          + "</td>" + 
-                    "<td>" + element.numberOfSeats + "</td>" +
+                    "<td>" + element.amountOfSeats + "</td>" +
                     "<td>" + element.meetsAgeRequirement + "</td>" +
-                    "<td>" + element.movieListinsId + "</td>" +
+                    "<td>" + element.movieListingId + "</td>" +
                     "<td><button id=\"" + element.id +  "-column-id\" type=\"button\"  class=\"edit btn btn-sm btn-primary\">Redigér</button></td>" +
                     "<td><button id=\"" + element.id +  "-column-id\" type=\"button\"  class=\"delete btn btn-sm btn-secondary\">Slet</button></td>";
         
