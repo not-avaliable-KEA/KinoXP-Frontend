@@ -43,7 +43,7 @@ window.addEventListener("load", async () => {
   const templateCreateMovieListing = await loadHtml("/pages/movieListing/create/createMovieListing.html")
   const templateViewMovieListing = await loadHtml("/pages/movieListing/view/viewMovieListing.html")
   // Reservation
-  const templateViewReservation   = await loadHtml("pages/reservations/view/viewReservations.html")
+  const templateViewReservation   = await loadHtml("/pages/reservations/view/viewReservations.html")
   const templateCreateReservation = await loadHtml("/pages/reservations/createForEmployees/createForEmployeesReservationes.html")
 
   adjustForMissingHash()
@@ -111,6 +111,18 @@ window.addEventListener("load", async () => {
       "/rediger-forestilling/:id": ({data}) => {
         renderTemplate(templateCreateMovieListing, "content")
         initCreateMovieListing(data)
+      },
+      "/se-reservationer": () => {
+        renderTemplate(templateViewReservation, "content")
+        initViewReservation()
+      },
+      "/opret-reservation": () => {
+        renderTemplate(templateCreateReservation, "content")
+        initCreateReservation()
+      },
+      "/rediger-reservation/:id": ({data}) => {
+        renderTemplate(templateCreateReservation, "content")
+        initCreateReservation(data)
       },
     })
     .notFound(() => {
