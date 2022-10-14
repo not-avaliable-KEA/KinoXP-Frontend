@@ -10,7 +10,7 @@ export async function initViewReservation(){
     const reservationInfo = await response.json();
 
     document.getElementById('table-body').innerHTML = ""; // to prevent showing of old entities
-    list.forEach((element) => makeNewReservation(element));
+    reservationInfo.forEach((element) => makeNewReservation(element));
 }
 
 function makeNewReservation(element) {
