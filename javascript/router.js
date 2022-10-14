@@ -21,7 +21,8 @@ import { initViewMovieTheaters }   from "/pages/movieTheater/view/viewMovieTheat
 // Movie Listing
 import { initCreateMovieListing }  from "/pages/movieListing/Create/createMovieListing.js"
 import { initViewMovieListing }    from "/pages/movieListing/view/viewMovieListing.js"
-// Reservations
+// Reservation 
+import { initViewReservation }     from "/pages/reservations/view/viewReservations.js"
 import { initCreateReservation }  from "/pages/reservations/createForEmployees/createForEmployeesReservationes.js"
 
 window.addEventListener("load", async () => {
@@ -41,7 +42,8 @@ window.addEventListener("load", async () => {
   // Movie Listing
   const templateCreateMovieListing = await loadHtml("/pages/movieListing/create/createMovieListing.html")
   const templateViewMovieListing = await loadHtml("/pages/movieListing/view/viewMovieListing.html")
-
+  // Reservation
+  const templateViewReservation   = await loadHtml("pages/reservations/view/viewReservations.html")
   const templateCreateReservation = await loadHtml("/pages/reservations/createForEmployees/createForEmployeesReservationes.html")
 
   adjustForMissingHash()
@@ -109,14 +111,6 @@ window.addEventListener("load", async () => {
       "/rediger-forestilling/:id": ({data}) => {
         renderTemplate(templateCreateMovieListing, "content")
         initCreateMovieListing(data)
-      },
-      "/opret-reservation": () => {
-        renderTemplate(templateCreateReservation, "content")
-        initCreateReservation()
-      },
-      "/rediger-reservation/:id": ({data}) => {
-        renderTemplate(templateCreateReservation, "content")
-        initCreateReservation(data)
       },
     })
     .notFound(() => {
