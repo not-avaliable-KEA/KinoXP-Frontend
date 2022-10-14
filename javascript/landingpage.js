@@ -47,7 +47,7 @@ async function getMoviesAndGenres(){
 
             document.getElementById(`row-${GenreValues[i]}`).appendChild(elem)
 
-            elem.className = 'col-6 col-md-4 col-xl-2'
+            elem.className = 'col-12 col-md-6 col-lg-4 col-xl-3'
             
             elem.innerHTML = `<a href="/pages/movieInfo/view/viewMovieInfo.html?id=${movieListe[ii].id}">
                                 <div class="card"> 
