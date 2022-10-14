@@ -1,8 +1,6 @@
 
 
-//get movieData
-
-const url = "localhost:8080/api/v1/movieListings";
+const url = "https://kinoxp-na.azurewebsites.net/api/v1/movieListings";
 
 async function getMovielistings(){
     const response = await fetch(url)

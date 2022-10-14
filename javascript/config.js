@@ -1,1 +1,1 @@
-export const config = { url: "http://localhost:8080" }; 
+export const config = { url: "https://kinoxp-na.azurewebsites.net" }; 
