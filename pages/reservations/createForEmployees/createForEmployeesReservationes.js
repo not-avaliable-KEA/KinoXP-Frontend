@@ -12,7 +12,7 @@ export async function initCreateReservation(data) {
     if (id != null && id > 0) {
         await getReservation();
         document.getElementById("movieListingId").innerHTML = "";
-        document.getElementById("button").innerHTML = "Rediger";
+        document.getElementById("button").innerHTML = "Godkend";
     } else {
         id = null;
     }
