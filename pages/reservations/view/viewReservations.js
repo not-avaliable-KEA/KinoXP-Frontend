@@ -45,7 +45,7 @@ async function buttonClick(evt) {
 
     // if edit, change to edit page
     if (target.classList.contains("edit")) {
-        window.router.navigate("rediger-sal/" + id)
+        window.router.navigate("rediger-reservation/" + id)
     } 
 }
 

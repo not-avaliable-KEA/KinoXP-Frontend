@@ -44,7 +44,7 @@ async function initMovieInfo() {
         <tr>
             <td>${listing.movieTheater.name}</td>
             <td>${listing.date}</td>
-            <td><a href="to be added ! ?id=${listing.id}"><button class="btn btn-primary reserveButton">Bestil</button></a></td>
+            <td><a href="/pages/reservations/create/createReservations.html?id=${listing.id}"><button class="btn btn-primary reserveButton">Bestil</button></a></td>
         </tr>`;
 
         tablebody.appendChild(row);
