@@ -21,7 +21,7 @@ function makeNewReservation(element) {
                     "<td>" + element.name          + "</td>" + 
                     "<td>" + element.numberOfSeats + "</td>" +
                     "<td>" + element.meetsAgeRequirement + "</td>" +
-                    "<td>" + element.movieListinsId + "</td>" +
+                    "<td>" + element.movieListingId + "</td>" +
                     "<td><button id=\"" + element.id +  "-column-id\" type=\"button\"  class=\"edit btn btn-sm btn-primary\">Redigér</button></td>" +
                     "<td><button id=\"" + element.id +  "-column-id\" type=\"button\"  class=\"delete btn btn-sm btn-secondary\">Slet</button></td>";
         
