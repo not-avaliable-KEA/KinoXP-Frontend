@@ -10,20 +10,20 @@ import {
 
 // imports for init method in the given script
 // Employee
-import { initCreateEmployee } from "/pages/employee/create/createEmployee.js"
-import { initViewEmployees }  from "/pages/employee/view/viewEmployees.js"
+import { initCreateEmployee }      from "./pages/employee/create/createEmployee.js"
+import { initViewEmployees }       from "./pages/employee/view/viewEmployees.js"
 // Movie
-import { initCreateMovie }  from "/pages/movie/create/createMovie.js"
-import { initViewMovies }   from "/pages/movie/view/viewMovies.js"
+import { initCreateMovie }         from "./pages/movie/create/createMovie.js"
+import { initViewMovies }          from "./pages/movie/view/viewMovies.js"
 // Movie theater
-import { initCreateMovieTheater }  from "/pages/movieTheater/create/createMovieTheater.js"
-import { initViewMovieTheaters }   from "/pages/movieTheater/view/viewMovieTheaters.js"
+import { initCreateMovieTheater }  from "./pages/movieTheater/create/createMovieTheater.js"
+import { initViewMovieTheaters }   from "./pages/movieTheater/view/viewMovieTheaters.js"
 // Movie Listing
-import { initCreateMovieListing }  from "/pages/movieListing/Create/createMovieListing.js"
-import { initViewMovieListing }    from "/pages/movieListing/view/viewMovieListing.js"
+import { initCreateMovieListing }  from "./pages/movieListing/Create/createMovieListing.js"
+import { initViewMovieListing }    from "./pages/movieListing/view/viewMovieListing.js"
 // Reservation 
-import { initViewReservation }     from "/pages/reservations/view/viewReservations.js"
-import { initCreateReservation }  from "/pages/reservations/createForEmployees/createForEmployeesReservationes.js"
+import { initViewReservation }     from "./pages/reservations/view/viewReservations.js"
+import { initCreateReservation }   from "./pages/reservations/createForEmployees/createForEmployeesReservationes.js"
 
 window.addEventListener("load", async () => {
 

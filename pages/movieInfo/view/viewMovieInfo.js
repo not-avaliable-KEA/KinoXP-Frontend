@@ -1,4 +1,5 @@
 const url = "https://kinoxp-na.azurewebsites.net/api/v1/movies/";
+//const url = "http://localhost:8080/api/v1/movies/";
 
 
 

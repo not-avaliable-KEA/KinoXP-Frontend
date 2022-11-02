@@ -2,6 +2,7 @@ getMoviesAndGenres();
 
 async function getMoviesAndGenres(){
     const moviesUrl = "https://kinoxp-na.azurewebsites.net/api/v1/movies";
+    //const moviesUrl = "http://localhost:8080/api/v1/movies";
     const movieResponse = await fetch(moviesUrl);
     const movieData = await movieResponse.json();
 
